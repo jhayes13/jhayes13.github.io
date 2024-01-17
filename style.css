@@ -1,12 +1,65 @@
 h1 {    
-    color:blueviolet;
-font-family:sans-serif;
+    color:rgba(1, 88, 25, 0.919);
+font-family: ;
+padding: 30px;
 }
 
 p {
-    color:coral
+    color:rgb(0, 0, 0);
 }
 
 h2 {
-    font-family:'Courier New', Courier, monospace
+    color:rgba(157, 37, 10, 0.911);
+    font-family:sans-serif; 
 }
+body {
+    background-color:papayawhip;
+    margin-left: 200px;
+    margin-right: 200px;
+}
+img {
+    border: 4px solid rgba(172, 172, 97, 0.788);
+    margin-left: 450px;
+    width: 25%;
+    height: 25%;
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {opacity: 1;}
+}
+.animated-div {
+    animation: fadeIn 15s ease-in-out;
+}
+.inline-image {
+    display: inline-block;
+    veritcal-align: middle;
+}
+@keyframes wave {
+    0% {
+      transform: translateX(0);
+    }
+    50% {
+      transform: translateX(-20px);
+    }
+    100% {
+      transform: translateX(10);
+    }
+  }
+.wavy-text {
+    display: inline-block;
+    font-size: 20px;
+    animation: wave .5s infinite;
+}
+@keyframes blink {
+    0%, 49%, 100% {
+        opacity: 1;
+      }
+      50% {
+        opacity: 0;
+      }
+    }
+.blink-text {
+        animation: blink 5s infinite;
+    }
