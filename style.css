@@ -1,11 +1,15 @@
 h1 {    
     color:rgba(1, 88, 25, 0.919);
-font-family: ;
-padding: 30px;
+    font-family: sans-serif; 
+    margin-left: px;
+    margin-right: px;
 }
 
 p {
     color:rgb(0, 0, 0);
+    padding: 2px;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 h2 {
@@ -19,9 +23,8 @@ body {
 }
 img {
     border: 4px solid rgba(172, 172, 97, 0.788);
-    margin-left: 450px;
-    width: 25%;
-    height: 25%;
+    width: ;
+    height:;
 }
 @keyframes fadeIn {
     from {
@@ -63,3 +66,45 @@ img {
 .blink-text {
         animation: blink 5s infinite;
     }
+@keyframes flash {
+        0% { color: rgb(247, 0, 255); }
+        50% { color: rgb(255, 0, 174); }
+        100% { color: rgb(51, 0, 255); }
+    }
+
+    .flashing-element {
+        animation: flash 4s infinite; 
+    }
+
+    
+    .gallery img:hover {
+        transform: scale(1.1);
+    }
+    .stacked-gallery {
+        column-count: 4; /* Adjust the number of columns as needed */
+        column-gap: 20px; /* Adjust the gap between columns */
+        margin: 20px;
+    }
+
+    /* Style for each image in the gallery */
+    .stacked-gallery img {
+        width: 100%; /* Make images fill the column width */
+        height: auto;
+        margin-bottom: 20px; /* Adjust the margin between images */
+        border: 4px solid rgba(172, 172, 97, 0.788);
+        border-radius: 8px;
+        cursor: pointer;
+        transition: transform 0.3s ease-in-out;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    /* Hover effect for the image */
+    .stacked-gallery img:hover {
+        transform: scale(1.1);
+    }
+    footer {
+        background-color: rgba(172, 172, 97, 0.788);
+        color: #000000;
+        padding: 10px;
+      }
