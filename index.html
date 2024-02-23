@@ -2,6 +2,16 @@
 <html>
 <head>
 <link rel="stylesheet" href="style.css"
+        <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NASA APOD Viewer</title>
+    <style>
+        /* CSS to style the image */
+        #apod-image {
+            max-width: 100%; /* Ensures the image doesn't exceed the container width */
+            height: auto; /* Maintains the aspect ratio */
+        }
+    </style>
 </head>
 <body>
 <h1> 
@@ -46,11 +56,16 @@
     <div id="apod-container">
         <p>Loading...</p>
     </div>
+    
+    <h1>NASA Astronomy Picture of the Day</h1>
+    <div id="apod-container">
+        <p>Loading...</p>
+    </div>
 
     <script>
         // Function to fetch data from NASA APOD API
         function fetchAPOD() {
-            var apiKey = 'WkA9qmKjslCy9akWtPe5KTVHYPxi0bzgL8jpZ1er'; // Replace 'YOUR_API_KEY' with your actual NASA API key
+            var apiKey = 'YOUR_API_KEY'; // Replace 'YOUR_API_KEY' with your actual NASA API key
             var apiUrl = 'https://api.nasa.gov/planetary/apod?api_key=' + apiKey;
 
             fetch(apiUrl)
@@ -59,13 +74,12 @@
                 // Update the HTML content with data from the API response
                 var apodContainer = document.getElementById('apod-container');
                 apodContainer.innerHTML = `
-                    <img src="${data.hdurl}" alt="${data.title}">
-                    
+                    <img id="apod-image" src="${data.hdurl}" alt="${data.title}">
                     <h2>${data.title}</h2>
                     <p>${data.explanation}</p>
                 `;
-
-                 // Change the size of the image dynamically
+                
+                // Change the size of the image dynamically
                 var apodImage = document.getElementById('apod-image');
                 apodImage.style.width = '400px'; // Set the width to 400 pixels (change it as needed)
                 apodImage.style.height = 'auto'; // Maintain aspect ratio
