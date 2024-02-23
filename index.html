@@ -53,7 +53,21 @@
     <img src="gon-and-killua-laughing.jpg" alt="HUNTER X HUNTER: gon and killua, laughing ; cute">
 </div>
 
- <h1>Spaceship Game</h1>
+ <h2>Spaceship Game</h2>
+   <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    canvas {
+      border: 1px solid #000;
+    }
+  </style>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
   <script>
     let stars = [];
@@ -145,7 +159,7 @@
         push();
         translate(this.x, this.y, 0);
         fill(255, 0, 0); // Red color for spaceship
-        box(30, 15, 10); // Simple box for spaceship
+        triangle(30, 15, 10); // Simple box for spaceship
         pop();
       }
     }
@@ -159,7 +173,7 @@
 
 
         
-<h1>NASA Astronomy Picture of the Day</h1>
+<h2>NASA Astronomy Picture of the Day</h2>
 <div id="apod-container">
 <p>Loading...</p>
 </div>
