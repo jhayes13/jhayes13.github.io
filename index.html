@@ -71,7 +71,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
   <script>
     let stars = [];
-    let spaceship;
 
     function setup() {
       createCanvas(600, 400, WEBGL);
@@ -79,10 +78,6 @@
       // Create shooting stars
       for (let i = 0; i < 100; i++) {
         stars.push(new ShootingStar());
-      }
-
-      // Create spaceship
-      spaceship = new Spaceship();
     }
 
     function draw() {
@@ -92,24 +87,7 @@
       for (let star of stars) {
         star.update();
         star.display();
-      }
 
-      // Move and display spaceship
-      spaceship.update();
-      spaceship.display();
-    }
-
-    function keyPressed() {
-      // Control spaceship with arrow keys
-      if (keyCode === LEFT_ARROW) {
-        spaceship.move(-5, 0);
-      } else if (keyCode === RIGHT_ARROW) {
-        spaceship.move(5, 0);
-      } else if (keyCode === UP_ARROW) {
-        spaceship.move(0, -5);
-      } else if (keyCode === DOWN_ARROW) {
-        spaceship.move(0, 5);
-      }
     }
 
     class ShootingStar {
@@ -136,30 +114,6 @@
         stroke(255);
         strokeWeight(2);
         line(0, 0, 0, 0, 0, -this.length);
-        pop();
-      }
-    }
-
-    class Spaceship {
-      constructor() {
-        this.x = 0;
-        this.y = 150;
-      }
-
-      move(x, y) {
-        this.x += x;
-        this.y += y;
-      }
-
-      update() {
-        // Additional spaceship logic can be added here
-      }
-
-      display() {
-        push();
-        translate(this.x, this.y, 0);
-        fill(255, 0, 0); // Red color for spaceship
-        triangle(30, 15, 10); // Simple box for spaceship
         pop();
       }
     }
