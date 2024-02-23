@@ -59,10 +59,10 @@
                 // Update the HTML content with data from the API response
                 var apodContainer = document.getElementById('apod-container');
                 apodContainer.innerHTML = `
-                    <img src="${data.hdurl}" alt="${data.title}">
-                    <img 
+                    <img src="${data.hdurl}" alt="${data.title}"
                    style="margin-left: 40px" 
-        style="margin-top: 60px">
+                    style="margin-top: 60px"
+                    width="600" height="600">
                     
                     <h2>${data.title}</h2>
                     <p>${data.explanation}</p>
